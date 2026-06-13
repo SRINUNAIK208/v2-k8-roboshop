@@ -99,6 +99,9 @@ spec:
      containers:
      - name: frontend
        image: srinunaik208/frontend:v2 
+       envFrom:
+       - configMapRef:
+           name: nginx-conf
      
 
 ---
