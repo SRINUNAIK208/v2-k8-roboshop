@@ -86,6 +86,6 @@ spec:
         envFrom:
         - secretRef:
             name: mysql
-      ports:
+     
         
       
