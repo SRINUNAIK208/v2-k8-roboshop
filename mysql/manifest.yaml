@@ -6,10 +6,10 @@ metadata:
   labels:
     component: mysql
     project: roboshop
-    env: dev
+    tier: database
 type: Opaque
 data:
-  MYSQL_ROOT_PASSWORD: "Um9ib1Nob3BAMQo="
+  MYSQL_ROOT_PASSWORD: "Um9ib1Nob3BAMQ=="
                         
 
 
@@ -87,5 +87,5 @@ spec:
         - secretRef:
             name: mysql
       ports:
-        - containerPort: 3306
+        
       
