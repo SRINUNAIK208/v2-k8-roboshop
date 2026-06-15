@@ -86,6 +86,8 @@ spec:
         envFrom:
         - secretRef:
             name: mysql
+        args:
+        - "--mysql-native-password=ON"   
      
         
       
