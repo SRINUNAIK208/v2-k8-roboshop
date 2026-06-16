@@ -138,7 +138,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: "https://roboshop-srinunayak.online"
+  - host: "roboshop-srinunayak.online"
     http:
       paths:
       - pathType: Prefix
