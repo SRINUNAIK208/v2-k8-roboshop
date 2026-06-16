@@ -82,5 +82,18 @@ spec:
         envFrom:
         - secretRef:
             name: rabbitmq
+        volumeMounts:
+        - name: rabbitmq-volume
+          mountPath: /var/lib/rabbitmq
+      volumeClaimTemplate:
+      - metadata:
+          name: rabbitmq-volume
+        spec:
+          accessMode: 
+            ReadWriteOnce
+          StorageClass: roboshop-sc
+          resource:
+            requests:
+              storage: 2Gi
 
       

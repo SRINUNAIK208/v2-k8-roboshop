@@ -87,7 +87,21 @@ spec:
         - secretRef:
             name: mysql
         args:
-        - "--mysql-native-password=ON"   
+        - "--mysql-native-password=ON"
+        volumeMounts:
+          name: mysql-volume
+          mountPath: /var/lib/mysql 
+      volumeClaimTemplate:
+      - metadata:
+          name: mysql-volume 
+        spec:
+          StorageClass: roboshop-sc 
+          accessMode:
+            ReadWriteOnce
+          resource:
+            requests: 
+              storage: 2Gi
+               
      
         
       

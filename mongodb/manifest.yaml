@@ -65,5 +65,18 @@ spec:
       containers:
       - name: mongodb
         image: srinunaik208/mongodb:v2 
+        volumeMounts:
+        - name: mongodb-volume
+          mountPath: /data/db
+      volumeClaimTempaltes:
+      - metadata:
+          name: mongodb-volume
+        spec:
+          accessMode:
+          - ReadWriteOnce
+          StorageClass: roboshop-sc
+          resources:
+           requests:
+             storage: 2Gi
 
       

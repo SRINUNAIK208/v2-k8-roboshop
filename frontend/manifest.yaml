@@ -124,7 +124,31 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8080
-
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-roboshop
+  annotation:
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]' 
+    alb.ingress.kubernetes.io/target-type: ip 
+    alb.ingress.kubernetes.io/group.name: roboshop 
+    alb.ingress.kubernetes.io/certificate-arn: 
+    alb.ingress.kubernetes.io/scheme:  internet-facing
+spec:
+  ingressClassName: alb
+  rules:
+  - host: "https://roboshop-srinunayak.online"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 80
+ 
      
       
         
