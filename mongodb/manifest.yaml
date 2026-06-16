@@ -68,13 +68,13 @@ spec:
         volumeMounts:
         - name: mongodb-volume
           mountPath: /data/db
-      volumeClaimTempaltes:
+      volumeClaimTemplates:
       - metadata:
           name: mongodb-volume
         spec:
-          accessMode:
+          accessModes:
           - ReadWriteOnce
-          StorageClass: roboshop-sc
+          StorageClassName: roboshop-sc
           resources:
            requests:
              storage: 2Gi

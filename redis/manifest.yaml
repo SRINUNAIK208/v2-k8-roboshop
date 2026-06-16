@@ -66,18 +66,18 @@ spec:
       - name: redis
         image: redis:7
         volumeMounts:
-        - name: rabbitmq-volume
+        - name: redis-volume
           mountPath: /data
-      volumeClaimTemplate:
+      volumeClaimTemplates:
       - metadata:
-          name: rabbitmq-volume 
+          name: redis-volume
         spec:
-          accessMode:
-            ReadWriteOnce
-          strogeClass: roboshop-sc 
-          resource:
-            requests:
-              storage: 2Gi
+          accessModes:
+          - ReadWriteOnce
+          StorageClassName: roboshop-sc
+          resources:
+           requests:
+             storage: 2Gi
 
 
       

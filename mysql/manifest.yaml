@@ -91,16 +91,16 @@ spec:
         volumeMounts:
           name: mysql-volume
           mountPath: /var/lib/mysql 
-      volumeClaimTemplate:
+      volumeClaimTemplates:
       - metadata:
-          name: mysql-volume 
+          name: mysql-volume
         spec:
-          StorageClass: roboshop-sc 
-          accessMode:
-            ReadWriteOnce
-          resource:
-            requests: 
-              storage: 2Gi
+          accessModes:
+          - ReadWriteOnce
+          StorageClassName: roboshop-sc
+          resources:
+           requests:
+             storage: 2Gi
                
      
         

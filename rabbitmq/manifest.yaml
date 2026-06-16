@@ -85,15 +85,15 @@ spec:
         volumeMounts:
         - name: rabbitmq-volume
           mountPath: /var/lib/rabbitmq
-      volumeClaimTemplate:
+      volumeClaimTemplates:
       - metadata:
           name: rabbitmq-volume
         spec:
-          accessMode: 
-            ReadWriteOnce
-          StorageClass: roboshop-sc
-          resource:
-            requests:
-              storage: 2Gi
+          accessModes:
+          - ReadWriteOnce
+          StorageClassName: roboshop-sc
+          resources:
+           requests:
+             storage: 2Gi
 
       
